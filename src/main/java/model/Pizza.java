@@ -61,11 +61,11 @@ public class Pizza {
             throw new PizzaException("Вы пытаетесь удалить ингредиент, который не существует в пицце");
         }
 
-        if(count <= alreadyExistIngredientCount){
+        if(count < alreadyExistIngredientCount){
             ingredients.put(ingredient, alreadyExistIngredientCount - count);
         }
         else {
-            ingredients.put(ingredient, alreadyExistIngredientCount);
+            ingredients.remove(ingredient);
         }
     }
 

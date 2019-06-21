@@ -1,5 +1,7 @@
 package model;
 
+import exception.PizzaException;
+
 import java.util.HashMap;
 
 /**

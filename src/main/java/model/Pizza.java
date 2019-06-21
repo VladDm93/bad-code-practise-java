@@ -45,35 +45,31 @@ public class Pizza {
                 "Указан некорректный ингредиент или его количество");
     }
 
-    public void removeIngredient(
-        Ingredient ingredient,
-        int count
-    ) throws PizzaException {
-        if (ingredient != null && count > 0) {
-            // Проверка на существование коллекции
-            if (!ingredientsCollectionNotNull())
-                initIngredientsCollection();
-            // Если элемент уже существует
-            if (ingredients.containsKey(ingredient)) {
-                int alreadyExistIngredientCount = ingredients.get(
-                    ingredient);
-                // Если количество уже существующих элементов больше либо
-                // равно количеству удаляемых
-                if (Math.abs(count) >= alreadyExistIngredientCount)
-                    ingredients.remove(ingredient);
-                else
-                    ingredients.put(
-                        ingredient, alreadyExistIngredientCount - count);
-                // Если элемента не сущетсвует
-                } else
-                    throw new PizzaException(
-                        "Вы пытаетесь удалить ингредиент, который не существует в пицце");
-        } else
-            throw new PizzaException(
-                "Указан некорректный ингредиент или его количество");
+    public void removeIngredient(Ingredient ingredient, int count) throws PizzaException {
+        if(ingredient == null || count <=0){
+            throw new PizzaException("Указан некорректный ингредиент или его количество");
+        }
+
+        if (!ingredientsCollectionNotNull()) {
+            initIngredientsCollection();
+        }
+        int alreadyExistIngredientCount;
+
+        try {
+            alreadyExistIngredientCount = ingredients.get(ingredient);
+        } catch (NullPointerException e) {
+            throw new PizzaException("Вы пытаетесь удалить ингредиент, который не существует в пицце");
+        }
+
+        if(count <= alreadyExistIngredientCount){
+            ingredients.put(ingredient, alreadyExistIngredientCount - count);
+        }
+        else {
+            ingredients.put(ingredient, alreadyExistIngredientCount);
+        }
     }
 
-    private boolean ingredientsCollectionNotNull() {
+    private boolean ingredientsCollectionNotNull(){
         return ingredients != null;
     }
 

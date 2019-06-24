@@ -36,6 +36,6 @@ public class PizzaTest {
         } catch (PizzaException e) {
             e.printStackTrace();
         }
-        assertEquals(null, pizza.getIngredients().get(cheese));
+        assertNull(pizza.getIngredients().get(cheese));
     }
 }

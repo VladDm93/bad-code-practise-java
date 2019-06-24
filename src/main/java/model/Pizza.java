@@ -12,18 +12,18 @@ public class Pizza {
     private HashMap<Ingredient, Integer> ingredients;
 
     public Pizza() {
-
+        this.ingredients = new HashMap<>();
     }
 
     public Pizza(int size, HashMap<Ingredient, Integer> ingredients) {
         this.size = size;
         this.ingredients = ingredients;
+
     }
 
     public boolean isNotNull(Ingredient ingredient, int count) {
-        if (ingredient != null && count > 0 && !ingredientsCollectionNotNull()) {
-          initIngredientsCollection();
-          return true;
+        if (ingredient != null && count > 0 && ingredientsCollectionNotNull()) {
+            return true;
         }
         return false;
     }
@@ -45,13 +45,15 @@ public class Pizza {
     public void removeIngredient(Ingredient ingredient, int count) throws PizzaException {
        if (isNotNull(ingredient, count)){
            if (ingredients.containsKey(ingredient)) {
-                int alreadyExistIngredientCount = ingredients.get(
-                        ingredient);
-                if (Math.abs(count) >= alreadyExistIngredientCount)
+               System.out.println("salam");
+                int alreadyExistIngredientCount = ingredients.get(ingredient);
+                if (Math.abs(count) >= alreadyExistIngredientCount) {
+                    System.out.println("privet");
                     ingredients.remove(ingredient);
-                else
+                } else {
                     ingredients.put(
                             ingredient, alreadyExistIngredientCount - count);
+                }
             } else
                 throw new PizzaException("Вы пытаетесь удалить ингредиент, который не существует в пицце");
         }

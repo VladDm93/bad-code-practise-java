@@ -59,7 +59,7 @@ public class Pizza {
             initIngredientsCollection();
 
         // Проверка наличия ингридиента в пицце
-        if (ingredients.containsKey(ingredient)) {
+        if (!ingredients.containsKey(ingredient)) {
             throw new PizzaException("Вы пытаетесь удалить ингредиент, который не существует в пицце");
         }
 

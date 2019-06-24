@@ -16,16 +16,13 @@ public class Pizza {
     }
 
     public Pizza(
-        int size, HashMap<Ingredient, Integer> ingredients
+            int size, HashMap<Ingredient, Integer> ingredients
     ) {
         this.size = size;
         this.ingredients = ingredients;
     }
 
-    public void addIngredient(
-        Ingredient ingredient,
-        int count
-    ) throws PizzaException {
+    public void addIngredient(Ingredient ingredient, int count) throws PizzaException {
         if (ingredient != null && count > 0) {
             // Проверка на существование коллекции
             if (!ingredientsCollectionNotNull())
@@ -33,44 +30,46 @@ public class Pizza {
             // Если элемент уже существует
             if (ingredients.containsKey(ingredient)) {
                 int alreadyExistIngredientCount = ingredients.get(
-                    ingredient);
+                        ingredient);
                 ingredients.put(
-                    ingredient, alreadyExistIngredientCount + count);
-            // Если не существует
+                        ingredient, alreadyExistIngredientCount + count);
+                // Если не существует
             } else {
                 ingredients.put(ingredient, count);
             }
         } else
             throw new PizzaException(
-                "Указан некорректный ингредиент или его количество");
+                    "Указан некорректный ингредиент или его количество");
     }
 
-    public void removeIngredient(
-        Ingredient ingredient,
-        int count
-    ) throws PizzaException {
+    public void removeIngredient(Ingredient ingredient, int count) throws PizzaException {
         if (ingredient != null && count > 0) {
-            // Проверка на существование коллекции
-            if (!ingredientsCollectionNotNull())
-                initIngredientsCollection();
+            checkIngredientsCollection();
             // Если элемент уже существует
-            if (ingredients.containsKey(ingredient)) {
-                int alreadyExistIngredientCount = ingredients.get(
-                    ingredient);
-                // Если количество уже существующих элементов больше либо
-                // равно количеству удаляемых
-                if (Math.abs(count) >= alreadyExistIngredientCount)
-                    ingredients.remove(ingredient);
-                else
-                    ingredients.put(
-                        ingredient, alreadyExistIngredientCount - count);
-                // Если элемента не сущетсвует
-                } else
-                    throw new PizzaException(
-                        "Вы пытаетесь удалить ингредиент, который не существует в пицце");
         } else
             throw new PizzaException(
-                "Указан некорректный ингредиент или его количество");
+                    "Указан некорректный ингредиент или его количество");
+        if (ingredients.containsKey(ingredient)) {
+            int alreadyExistIngredientCount = ingredients.get(ingredient);
+            int countMinusExist = count - alreadyExistIngredientCount;
+            if (countMinusExist == 0) {
+                ingredients.remove(ingredient);
+            } else if (countMinusExist < 0) {
+                ingredients.put(
+                        ingredient, alreadyExistIngredientCount - count);
+            } else {
+                throw new PizzaException(
+                        "Вы пытаетесь удалить большее количество ингредиента, чем содержится в пицце");
+            }
+            // Если элемента не сущетсвует
+        } else
+            throw new PizzaException(
+                    "Вы пытаетесь удалить ингредиент, который не существует в пицце");
+    }
+
+    private void checkIngredientsCollection() {
+        if (!ingredientsCollectionNotNull())
+            initIngredientsCollection();
     }
 
     private boolean ingredientsCollectionNotNull() {
@@ -81,7 +80,7 @@ public class Pizza {
         ingredients = new HashMap<Ingredient, Integer>();
     }
 
-    // -- Getters & Setters --
+// -- Getters & Setters --
 
     public int getSize() {
         return size;
@@ -96,7 +95,7 @@ public class Pizza {
     }
 
     public void setIngredients(
-        HashMap<Ingredient, Integer> ingredients
+            HashMap<Ingredient, Integer> ingredients
     ) {
         this.ingredients = ingredients;
     }

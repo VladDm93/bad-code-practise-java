@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26383dae-e060-44ba-b945-1f4fee26af3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizza-order-training.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tests/model/PizzaTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/PizzaOrder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controller/CliController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/DefaultStorage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Ingredient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Pizza.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/PizzaException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/Storage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/model/StorageException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/model/PizzaTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Pizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/model/PizzaTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tests/model/PizzaTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Pizza.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="-180">
               <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding>
                 <element signature="e#228#229#0" expanded="true" />
@@ -70,12 +47,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/tests/model/PizzaTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="389">
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#237#238#0" expanded="true" />
                 <element signature="e#272#273#0" expanded="true" />
+                <element signature="e#1025#1026#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -234,7 +212,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PizzaTests.ingredientAddedIf">
+  <component name="RunManager" selected="JUnit.PizzaTests.exceptionThrown_ifIngredientIllegal">
     <configuration name="PizzaTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pizza-order-training" />
       <extension name="coverage">
@@ -261,6 +239,22 @@
       <option name="PACKAGE_NAME" value="model" />
       <option name="MAIN_CLASS_NAME" value="model.PizzaTests" />
       <option name="METHOD_NAME" value="addIngredients" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PizzaTests.exceptionThrown_ifIngredientIllegal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pizza-order-training" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.PizzaTests" />
+      <option name="METHOD_NAME" value="exceptionThrown_ifIngredientIllegal" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -300,6 +294,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PizzaTests.exceptionThrown_ifIngredientIllegal" />
         <item itemvalue="JUnit.PizzaTests.ingredientAddedIf" />
         <item itemvalue="JUnit.PizzaTests" />
         <item itemvalue="JUnit.PizzaTests.removeIngredients" />
@@ -318,14 +313,11 @@
       <option name="presentableId" value="Default" />
       <updated>1561131495367</updated>
       <workItem from="1561131497901" duration="1517000" />
-      <workItem from="1561393558493" duration="1110000" />
+      <workItem from="1561393558493" duration="1442000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PizzaTests_addIngredients - 2019.06.24 at 19h 34m 55s.xml">
-      <configuration name="PizzaTests.addIngredients" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PizzaTests_removeIngredients - 2019.06.24 at 19h 36m 03s.xml">
       <configuration name="PizzaTests.removeIngredients" configurationId="JUnit" />
     </history-entry>
@@ -353,15 +345,18 @@
     <history-entry file="PizzaTests - 2019.06.24 at 19h 43m 43s.xml">
       <configuration name="PizzaTests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PizzaTests_ingredientAddedIf - 2019.06.24 at 19h 44m 31s.xml">
+      <configuration name="PizzaTests.ingredientAddedIf" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2627000" />
+    <option name="totallyTimeSpent" value="2959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25235197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -371,7 +366,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -427,7 +422,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Pizza.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="-180">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
             <element signature="e#228#229#0" expanded="true" />
@@ -443,12 +438,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/tests/model/PizzaTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="389">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#237#238#0" expanded="true" />
             <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
           </folding>
         </state>
       </provider>

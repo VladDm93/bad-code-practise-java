@@ -19,17 +19,22 @@ public class PizzaTests {
     }
 
     @Test
-    void ingredientAdded_ifIngredientAdded() throws PizzaException {
+    void addIngredient_ifIngredientAdded() throws PizzaException {
         Ingredient ingredient = new Ingredient("Pelmen");
         pizza.addIngredient(ingredient, 1);
         assertTrue(pizza.getIngredients().containsKey(ingredient));
     }
 
     @Test
-    void ingredientRemoved_ifIngredientRemoved() throws PizzaException {
+    void removeIngredient_ifIngredientRemoved() throws PizzaException {
         Ingredient ingredient = new Ingredient("Pelmen");
         pizza.addIngredient(ingredient, 1);
         pizza.removeIngredient(ingredient, 1);
         assertFalse(pizza.getIngredients().containsKey(ingredient));
+    }
+
+    @Test
+    void exceptionThrown_ifIngredientIllegal() {
+        assertThrows(Exception.class, () -> pizza.addIngredient(null, 1));
     }
 }

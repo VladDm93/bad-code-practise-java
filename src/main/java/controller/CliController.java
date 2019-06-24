@@ -42,7 +42,7 @@ public class CliController {
                            "заказанной пиццы).");
     }
 
-    public static void printStoreMessage(HashMap<Ingredient, Integer> ingredients) {
+    public static void printStoreMessage(Map<Ingredient, Integer> ingredients) {
         if (ingredients != null && ingredients.size() > 0) {
             StringBuilder message = new StringBuilder(
                 "На данный момент в хранилище имеются следующие ингриденты:\n");

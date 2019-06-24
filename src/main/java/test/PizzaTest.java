@@ -1,5 +1,8 @@
-package model;
+package test;
 
+import model.Ingredient;
+import model.Pizza;
+import model.PizzaException;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;

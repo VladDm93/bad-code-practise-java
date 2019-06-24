@@ -34,7 +34,7 @@ public class PizzaTests {
     }
 
     @Test
-    void exceptionThrown_ifIngredientIllegal() {
+    void addIngredient_exceptionThrown_ifIngredientIllegal() {
         assertThrows(Exception.class, () -> pizza.addIngredient(null, 1));
     }
 }

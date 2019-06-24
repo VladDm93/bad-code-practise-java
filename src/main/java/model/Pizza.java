@@ -22,10 +22,7 @@ public class Pizza {
         this.ingredients = ingredients;
     }
 
-    public void addIngredient(
-            Ingredient ingredient,
-            int count
-    ) throws PizzaException {
+    public void addIngredient(Ingredient ingredient, int count) throws PizzaException {
         if (ingredient != null && count > 0) {
             // Проверка на существование коллекции
             if (!ingredientsCollectionNotNull())
@@ -49,25 +46,25 @@ public class Pizza {
         if (ingredient != null && count > 0) {
             checkIngredientsCollection();
             // Если элемент уже существует
-            if (ingredients.containsKey(ingredient)) {
-                int alreadyExistIngredientCount = ingredients.get(ingredient);
-                int countMinusExist = count - alreadyExistIngredientCount;
-                if (countMinusExist == 0) {
-                    ingredients.remove(ingredient);
-                } else if (countMinusExist < 0) {
-                    ingredients.put(
-                            ingredient, alreadyExistIngredientCount - count);
-                } else {
-                    throw new PizzaException(
-                            "Вы пытаетесь удалить большее количество ингредиента, чем содержится в пицце");
-                }
-                // Если элемента не сущетсвует
-            } else
-                throw new PizzaException(
-                        "Вы пытаетесь удалить ингредиент, который не существует в пицце");
         } else
             throw new PizzaException(
                     "Указан некорректный ингредиент или его количество");
+        if (ingredients.containsKey(ingredient)) {
+            int alreadyExistIngredientCount = ingredients.get(ingredient);
+            int countMinusExist = count - alreadyExistIngredientCount;
+            if (countMinusExist == 0) {
+                ingredients.remove(ingredient);
+            } else if (countMinusExist < 0) {
+                ingredients.put(
+                        ingredient, alreadyExistIngredientCount - count);
+            } else {
+                throw new PizzaException(
+                        "Вы пытаетесь удалить большее количество ингредиента, чем содержится в пицце");
+            }
+            // Если элемента не сущетсвует
+        } else
+            throw new PizzaException(
+                    "Вы пытаетесь удалить ингредиент, который не существует в пицце");
     }
 
     private void checkIngredientsCollection() {
